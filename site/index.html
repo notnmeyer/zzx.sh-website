@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>zzx.sh</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <span class="theme-icon">◐</span>
+    </button>
+
+    <div class="container">
+        <h1 class="title">zzx.sh</h1>
+        <p class="subtitle">projects & experiments</p>
+
+        <nav class="links">
+            <a href="https://first.zzx.sh" class="link-item">
+                <span class="link-name">First or Last</span>
+                <span class="link-desc">Periodically post anonymously</span>
+            </a>
+
+            <a href="https://fuzzbeed.zzx.sh" class="link-item">
+                <span class="link-name">Fuzzbeed</span>
+                <span class="link-desc">The ultimate quiz generator</span>
+            </a>
+
+            <a href="https://vip.zzx.sh" class="link-item">
+                <span class="link-name">VIP Room</span>
+                <span class="link-desc">Room for one</span>
+            </a>
+        </nav>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const theme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        });
+    </script>
+</body>
+</html>

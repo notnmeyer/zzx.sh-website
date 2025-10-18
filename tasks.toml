@@ -1,0 +1,2 @@
+[tasks.publish]
+cmds = ["rsync -rv site/ pgs.sh:/zzx-sh"]
